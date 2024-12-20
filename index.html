@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion-Based Suggestions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Emotion-Based Suggestions</h1>
+        
+        <!-- Emotion Buttons Section -->
+        <div class="emotion-buttons">
+            <button onclick="fetchAyah('Sad')">Sad</button>
+            <button onclick="fetchAyah('Happy')">Happy</button>
+            <button onclick="fetchAyah('Angry')">Angry</button>
+            <button onclick="fetchAyah('Alone')">Alone</button>
+        </div>
+
+        <!-- Ayah Display Section -->
+        <div class="ayah-card" id="ayah-card">
+            <div class="ayah-text" id="ayah-text">Select an emotion to see an Ayah or Hadith</div>
+            <button onclick="copyText()">Copy</button>
+            <button onclick="shareText()">Share</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
