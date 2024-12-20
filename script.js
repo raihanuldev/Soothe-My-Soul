@@ -1,27 +1,13 @@
-const ayahs = {
-    "Sad": [
-        "Ayah 1 for Sad",
-        "Ayah 2 for Sad"
-    ],
-    "Happy": [
-        "Ayah 1 for Happy",
-        "Ayah 2 for Happy"
-    ],
-    "Angry": [
-        "Ayah 1 for Angry",
-        "Ayah 2 for Angry"
-    ],
-    "Alone": [
-        "Ayah 1 for Alone",
-        "Ayah 2 for Alone"
-    ]
-};
-
 function fetchAyah(emotion) {
-    const ayahArray = ayahs[emotion];
-    const randomIndex = Math.floor(Math.random() * ayahArray.length);
-    const ayahText = ayahArray[randomIndex];
-    document.getElementById('ayah-text').innerText = ayahText;
+    fetch('ayat.json')
+        .then(response => response.json())
+        .then(data => {
+            const ayahArray = data[emotion];
+            const randomIndex = Math.floor(Math.random() * ayahArray.length);
+            const ayahText = ayahArray[randomIndex];
+            document.getElementById('ayah-text').innerText = ayahText;
+        })
+        .catch(error => console.error('Error loading ayat.json:', error));
 }
 
 function copyText() {
